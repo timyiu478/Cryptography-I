@@ -47,7 +47,7 @@ impl BlockCipher for Aes128CbcCipher {
         let iv = Aes128CbcCipher::generate_iv();
         let plaintextWithPadding = Aes128CbcCipher::pkcs5Padding(plaintext);
 
-        let mut cipher = Aes128::new((&self.key).into());
+        let cipher = Aes128::new((&self.key));
         let mut cipherBlocks:Vec<GenericArray<u8, U16>> = Vec::new();
         let mut inBlock: GenericArray<u8, U16> = GenericArray::default();
         let mut outBlock: GenericArray<u8, U16> = GenericArray::default();
@@ -55,10 +55,10 @@ impl BlockCipher for Aes128CbcCipher {
         cipherBlocks.push(iv);
 
         for (index, blockVec) in plaintextWithPadding.chunks(16).enumerate() {
-            let block: GenericArray<u8, U16> = GenericArray::clone_from_slice(&blockVec);
+            let block: GenericArray<u8, U16> = GenericArray::clone_from_slice(blockVec);
 
             if index == 0 {
-                let mut encyptedIV = iv.clone();
+                let mut encyptedIV = iv;
                 cipher.encrypt_block(&mut encyptedIV);
 
                 inBlock = Aes128CbcCipher::xor_generic_arrays(encyptedIV, block);
