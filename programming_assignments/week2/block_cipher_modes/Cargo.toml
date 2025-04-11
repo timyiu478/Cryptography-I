@@ -1,3 +1,4 @@
+workspace = { members = ["block_ciphers"] }
 [package]
 name = "block_cipher_modes"
 version = "0.1.0"
@@ -6,5 +7,5 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-aes = "0.8.4"
+block_ciphers = { path = "./block_ciphers" }
 cipher = "0.4.4"

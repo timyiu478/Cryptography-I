@@ -1,12 +1,13 @@
-use aes::Aes128;
-use cipher::{BlockEncrypt, KeyInit};
+use block_ciphers::BlockCipher;
+use block_ciphers::aes128cbccipher::Aes128CbcCipher;
+use cipher::{generic_array::GenericArray};
 
 fn main() {
-    let key = [0u8; 16]; // Example key
-    let block = [0u8; 16]; // Example block
-    let cipher = Aes128::new(&key.into());
+    let key = GenericArray::from([0u8; 16]);
+    let plaintext = b"Hello, AES CBC Cipher!"; // Example plaintext
 
-    let mut block_copy = block.into(); // Convert block to GenericArray
-    cipher.encrypt_block(&mut block_copy);
-    println!("Encrypted block: {:?}", block_copy);
+    let cipher = Aes128CbcCipher::new(key);
+    let ciphertext = cipher.encrypt(plaintext);
+
+    println!("Ciphertext: {:?}", ciphertext);
 }
