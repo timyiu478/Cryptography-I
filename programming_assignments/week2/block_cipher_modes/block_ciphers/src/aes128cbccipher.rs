@@ -47,7 +47,7 @@ impl BlockCipher for Aes128CbcCipher {
         let iv = Aes128CbcCipher::generate_iv();
         let plaintextWithPadding = Aes128CbcCipher::pkcs5Padding(plaintext);
 
-        let cipher = Aes128::new((&self.key));
+        let cipher = Aes128::new(&self.key);
         let mut cipherBlocks:Vec<GenericArray<u8, U16>> = Vec::new();
         let mut inBlock: GenericArray<u8, U16> = GenericArray::default();
         let mut outBlock: GenericArray<u8, U16> = GenericArray::default();
