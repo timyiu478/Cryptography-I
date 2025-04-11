@@ -1,11 +1,11 @@
 use crate::BlockCipher;
-use rand::Rng;
 use aes::Aes128;
-use generic_array::{typenum::U16};
-use cipher::{BlockEncrypt, KeyInit, generic_array::GenericArray};
+use cipher::{generic_array::GenericArray, BlockEncrypt, KeyInit};
+use generic_array::typenum::U16;
+use rand::Rng;
 
 pub struct Aes128CbcCipher {
-    key: GenericArray<u8, U16>
+    key: GenericArray<u8, U16>,
 }
 
 impl Aes128CbcCipher {
@@ -25,30 +25,33 @@ impl Aes128CbcCipher {
     fn pkcs5Padding(plaintext: &[u8]) -> Vec<u8> {
         let blockSize = 16;
         let mut plaintextWithPadding: Vec<u8> = plaintext.to_vec();
-        let paddingLength = blockSize - (plaintext.len() % blockSize); 
+        let paddingLength = blockSize - (plaintext.len() % blockSize);
 
         plaintextWithPadding.extend(vec![paddingLength as u8; paddingLength]);
 
         plaintextWithPadding
     }
 
-    fn xor_generic_arrays(arr1: GenericArray<u8, U16>, arr2: GenericArray<u8, U16>) -> GenericArray<u8, U16> {
+    fn xor_generic_arrays(
+        arr1: GenericArray<u8, U16>,
+        arr2: GenericArray<u8, U16>,
+    ) -> GenericArray<u8, U16> {
         GenericArray::from_exact_iter(
             arr1.iter()
                 .zip(arr2.iter()) // Pair elements from both arrays
-                .map(|(a, b)| a ^ b) // Apply XOR operation to each pair
-        ).expect("GenericArray must have the exact size")
+                .map(|(a, b)| a ^ b), // Apply XOR operation to each pair
+        )
+        .expect("GenericArray must have the exact size")
     }
 }
 
 impl BlockCipher for Aes128CbcCipher {
-
     fn encrypt(&self, plaintext: &[u8]) -> Vec<u8> {
         let iv = Aes128CbcCipher::generate_iv();
         let plaintextWithPadding = Aes128CbcCipher::pkcs5Padding(plaintext);
 
         let cipher = Aes128::new(&self.key);
-        let mut cipherBlocks:Vec<GenericArray<u8, U16>> = Vec::new();
+        let mut cipherBlocks: Vec<GenericArray<u8, U16>> = Vec::new();
         let mut inBlock: GenericArray<u8, U16> = GenericArray::default();
         let mut outBlock: GenericArray<u8, U16> = GenericArray::default();
 
