@@ -5,3 +5,4 @@ pub trait BlockCipher {
 }
 
 pub mod aes128cbccipher;
+pub mod aes128ctrcipher;
