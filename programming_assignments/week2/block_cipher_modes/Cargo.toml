@@ -9,3 +9,4 @@ edition = "2021"
 [dependencies]
 block_ciphers = { path = "./block_ciphers" }
 cipher = "0.4.4"
+generic-array = "1.2.0"
