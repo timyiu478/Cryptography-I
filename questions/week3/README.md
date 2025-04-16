@@ -23,7 +23,6 @@ No one know all of $B_i$ keys except $A$.
 ### Q5
 
 ![](q5.png)
-
 ### Q6
 
 #### Non Collision Resistance
@@ -32,10 +31,6 @@ No one know all of $B_i$ keys except $A$.
 1. $H'(m) = H(m[0,...,n-2])$
 1. $H'(m) = H(m)[0,...,31]$: output space is too small (${0,1}^32$)
 1. $H'(m) = H(m) xor H(m xor 1^{|m|})$: $H'(m)$ always $= 1$
-
-### Q8
-
-
 
 ### Q9
 
