@@ -34,7 +34,7 @@ No one know all of $B_i$ keys except $A$.
 
 ### Q9
 
-$y_2 = y_1 xor AES(x_1, AES_x_1) xor AES(x_2, x_2)$
+$y_2 = y_1 xor AES(x_1, x_1) xor AES(x_2, x_2)$
 
 ### Q10
 
