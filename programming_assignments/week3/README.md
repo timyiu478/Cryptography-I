@@ -5,3 +5,5 @@ Our goal in this project is to build a file authentication system that lets brow
 When appending the hash value to each block, please append it as binary data, that is, as 32 unencoded bytes (which is 256 bits).  If the file size is not a multiple of 1KB then the very last block will be shorter than 1KB, but all other blocks will be exactly 1KB.
 
 Your task is to write code to compute the hash $h_0$ of a given file $F$ and to verify blocks of $F$ as they are received by the client. 
+
+![](protocol.png)
