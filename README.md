@@ -6,8 +6,6 @@ This repository contains projects from the **Cryptography I** course. These proj
 
 ## Projects Overview
 
-Explore the following projects to deepen your understanding of cryptography concepts:
-
 | Week | Project Title                      | Description                                                                                   | Link                                                                 |
 |------|------------------------------------|-----------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
 | 1    | Many Time Pad Attack              | Understand the vulnerabilities when a stream cipher key is reused and apply XOR operations.   | [Project Details](programming_assignments/week1/)                   |
