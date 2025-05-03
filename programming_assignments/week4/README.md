@@ -1,6 +1,36 @@
-In this project you will experiment with a padding oracle attack against a toy web site hosted at crypto-class.appspot.com .  Padding oracle vulnerabilities affect a wide variety of products, including secure tokens . This project will show how they can be exploited.   We discussed CBC padding oracle attacks in week 4 ( segment number 6), but if you want to read more about them, see a short description here or Vaudenay's paper on this topic. Now to business.
+## Padding Oracle Attack
 
-Suppose an attacker wishes to steal secret information from our target web site crypto-class.appspot.com . The attacker suspects that the web site embeds encrypted customer data in URL parameters such as this: 
+![](assets/padding%20oracle%20attack.png)
+
+## Example
+
+```
+❯ ./padding-oracle-attack.py $(< ciphertext.txt)
+...
+Guessing byte 15: 73
+Guessing byte 14: 4f
+Guessing byte 13: 20
+Guessing byte 12: 68
+Guessing byte 11: 73
+Guessing byte 10: 69
+Guessing byte 9: 6d
+Guessing byte 8: 61
+Guessing byte 7: 65
+Guessing byte 6: 75
+Guessing byte 5: 71
+Guessing byte 4: 53
+Guessing byte 3: 20
+Guessing byte 2: 65
+Guessing byte 1: 72
+Guessing byte 0: 61
+bytearray(b'xxxxx')
+```
+
+## Description
+
+In this project you will experiment with a padding oracle attack against a toy web site hosted at `crypto-class.appspot.com`.  Padding oracle vulnerabilities affect a wide variety of products, including secure tokens . This project will show how they can be exploited.   We discussed CBC padding oracle attacks in week 4 (segment number 6), but if you want to read more about them, see a short description here or Vaudenay's paper on this topic. Now to business.
+
+Suppose an attacker wishes to steal secret information from our target web site `crypto-class.appspot.com`. The attacker suspects that the web site embeds encrypted customer data in URL parameters such as this: 
 
 ```
 http://crypto-class.appspot.com/po?er=f20bdba6ff29eed7b046d1df9fb7000058b1ffb4210a580f748b4ac714c001bd4a61044426fb515dad3f21f18aa577c0bdf302936266926ff37dbf7035d5eeb4
@@ -15,4 +45,3 @@ http://crypto-class.appspot.com/po?er="your ciphertext here"
 and observe the resulting error code.  The padding oracle will let you decrypt the given ciphertext one byte at a time.   To decrypt a single byte you will need to send up to 256 HTTP requests to the site.  Keep in mind that the first ciphertext block is the random IV. The decrypted message is ASCII encoded. To get you started here is a short Python script that sends a ciphertext supplied on the command line to the site and prints the resulting error code.  You can extend this script (or write one from scratch) to implement the padding oracle attack.  Once you decrypt the given ciphertext, please enter the decrypted message in the box below.
 
 This project shows that when using encryption you must prevent padding oracle attacks by either using encrypt-then-MAC as in EAX or GCM, or if you must use MAC-then-encrypt then ensure that the site treats padding errors the same way it treats MAC errors.
-
