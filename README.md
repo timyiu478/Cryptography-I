@@ -1,6 +1,6 @@
 # Cryptography-I
 
-This repository contains projects from the **Cryptography I** course. These projects provide hands-on experience with cryptographic principles and techniques.
+This repository contains projects from the [**Cryptography I**](https://online.stanford.edu/courses/soe-y0001-cryptography-i) course by Dan Boneh, Stanford University. These projects provide hands-on experience with cryptographic principles and techniques.
 
 ## Projects
 
