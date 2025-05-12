@@ -24,7 +24,7 @@ Q: What is the order 2 of the set of invertiable elements of $Z_{35}$?
 
 A:
 
-The group $g = {1, 2, 2^2, 2^3, ..., 2^{35-1}$.
+The group $g = \{1, 2, 2^2, 2^3, ..., 2^{35-1} \}$.
 
 The order of $g$ is number of the smallest $a$ suthat $g^a = 1$ in $Z_{35}$.
 
