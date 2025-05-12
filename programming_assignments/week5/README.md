@@ -6,8 +6,8 @@ Rely on the fact that $x < B^2$ where $B = 2^{20}$.
 
 Performance Optimisations:
 
-1. build the hash table in parrell by each thread computing $h/g^{x_1}}$ for $x_1 \in [start, end)$.
-2. lookup the hash table in parrell by each thread computing $g^{B{x_0}}$ for $x_0 \in [start, end)$.
+1. build the hash table in parrell by each thread computing $h/g^{x_1}}$ for $x_1 \in \\[start, end\\)$.
+2. lookup the hash table in parrell by each thread computing $g^{B{x_0}}$ for $x_0 \in \\[start, end\\)$.
 
 # Usage
 
