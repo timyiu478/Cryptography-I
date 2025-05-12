@@ -1,3 +1,7 @@
+# Q1
+
+![](assets/q1.png)
+
 # Q7
 
 See [q7.py](q7.py)
