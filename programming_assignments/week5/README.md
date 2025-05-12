@@ -9,23 +9,9 @@ Performance Optimisations:
 1. build the hash table in parrell by each thread computing $h/g^{x_1}$ for their own $x_1$ range partition.
 2. lookup the hash table in parrell by each thread computing $g^{B{x_0}}$ for their own $x_0$ range partition.
 
-# Usage
+# Source Code
 
-run the code with the following command:
-
-```bash
-./main.py <input_file> <num_threads>
-```
-
-input file format:
-
-```json
-{
-  "p": "23",
-  "g": "5",
-  "h": "4",
-}
-```
+See [src](./src)
 
 # Problem
 
