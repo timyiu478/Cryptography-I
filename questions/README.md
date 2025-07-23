@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Q1
 
 ![](assets/q1.png)
@@ -46,3 +47,7 @@ g^b = Y_i ^ (1 / a_i) = g ^ ( a_i * b ) * ( 1 / a_i)
 1. phi(p) = |{ invertible elements in Z_p }| = |{ 1, 2, ..., p - 1}| = p - 1
 2. d = e ^ -1 mod (phi(p))
 
+=======
+
+# 
+>>>>>>> 011c67284ffb485f97d3caf63c53d20a06ab9836
