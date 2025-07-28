@@ -20,4 +20,8 @@ Run [src/q2/main.py](src/q2/main.py)
 
 Tip: Do not try to solve for p and q. Solve for 3p and 2q instead.
 
+![](assets/q3_a.png)
+
+![](assets/q3_b.png)
+
 Run [src/q3/main.py](src/q3/main.py)
