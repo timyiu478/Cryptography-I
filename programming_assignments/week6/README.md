@@ -25,3 +25,10 @@ Tip: Do not try to solve for p and q. Solve for 3p and 2q instead.
 ![](assets/q3_b.png)
 
 Run [src/q3/main.py](src/q3/main.py)
+
+# Q4
+
+![](assets/q4.png)
+
+
+Run [src/q4/main.py](src/q4/main.py)
