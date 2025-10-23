@@ -11,3 +11,4 @@ This repository contains projects from the [**Cryptography I**](https://online.s
 | 3    | File Authentication System: Hash Chain | Build a hash chain-based system for file integrity and authentication.                        | [Project Details](programming_assignments/week3/)                   |
 | 4 | Padding Orchard Attack | Implement a padding oracle attack to exploit vulnerabilities in padding schemes.              | [Project Details](programming_assignments/week4/)                   |
 | 5 | Discrete Logarithm Algorithm | Implement a discrete logarithm algorithm with a meet-in-the-middle attack.     | [Project Details](programming_assignments/week5/)                   |
+| 6 | RSA Breaking |  Break RSA when the public modulus N is generated incorrectly    | [Project Details](programming_assignments/week6/)                   |
